@@ -16,7 +16,9 @@ class Person(val firstName: String = "Default", val lastName: String = "Default"
     }
 
     fun printInfo(){
-        val nickNameToPrint = if(nickName != null) nickName else "no nickname"
+        val nickNameToPrint = nickName ?: "no nickname" //?: is the elvis operator.
+        // check what is on the left side, if whatever on the left side of operator is not null, go ahead and return that expression.
+        //otherwise, return what is on the right side of the operator. (?:)
         println("$firstName ($nickNameToPrint) $lastName")
     }
 
